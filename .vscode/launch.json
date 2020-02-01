@@ -1,0 +1,61 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/pkg/${fileBasenameNoExtension}.exe",
+            "args": ["192.168.66.117","1234"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",//指定连接的调试器，可以省略不写
+            "miDebuggerPath": "D:\\MinGW\\bin\\gdb.exe",//调试器路径,在Linux环境下需要注释掉这一行
+            "preLaunchTask": "gcc_compile", //debug前执行的任务、gcc1是tasks.json中的标签
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+
+        {
+            "name": "(gdb) Bash on Windows Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/${fileBasenameNoExtension}.exe",
+            "args": ["192.168.66.117","1234"],
+            "stopAtEntry": true,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            // "internalConsoleOptions": "openOnSessionStart",//
+            "externalConsole": true,
+            "preLaunchTask": "gcc_compile", //debug前执行的任务、gcc1是tasks.json中的标签
+            // "pipeTransport": {
+            //     "debuggerPath": "/mnt/d/MinGW/bin/gdb.exe",
+            //     "pipeProgram": "${env:windir}\\system32\\bash.exe",
+            //     "pipeArgs": ["-c"],
+            //     "pipeCwd": ""
+            // },
+
+            "MIMode": "gdb",//指定连接的调试器，可以省略不写
+            "miDebuggerPath": "D:\\MinGW\\bin\\gdb.exe",//调试器路径,在Linux环境下需要注释掉这一行
+
+
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}

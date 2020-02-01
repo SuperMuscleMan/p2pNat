@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "limits.h": "c",
+        "string.h": "c",
+        "stdio.h": "c",
+        "xlocale": "c",
+        "p2pnat_lib.h": "c"
+    }
+}
